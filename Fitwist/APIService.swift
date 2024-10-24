@@ -162,7 +162,7 @@ struct UserStats: Codable {
     let todayCalories: Int
     let waterIntake: Double
     let waterIntakeGoal: Int
-    
+
     enum CodingKeys: String, CodingKey {
         case weight, weightChange, bmi, todayCalories, waterIntake, waterIntakeGoal
     }
@@ -183,13 +183,15 @@ struct UserStats: Codable {
         }
         
         // Fleksibilno dekodiranje waterIntakeGoal
-        if let goalString = try? container.decode(String.self, forKey: .waterIntakeGoal) {
-            waterIntakeGoal = Int(goalString) ?? 0
-        } else if let goalInt = try? container.decode(Int.self, forKey: .waterIntakeGoal) {
-            waterIntakeGoal = goalInt
-        } else {
-            waterIntakeGoal = 0  // Default vrednost ako je null
-        }
+        if let intValue = try? container.decode(Int.self, forKey: .waterIntakeGoal) {
+                    waterIntakeGoal = intValue
+                } else if let stringValue = try? container.decode(String.self, forKey: .waterIntakeGoal),
+                          let intFromString = Int(stringValue) {
+                    waterIntakeGoal = intFromString
+                } else {
+                    print("Warning: Using fallback water intake goal")
+                    waterIntakeGoal = 2000 // Fallback samo ako sve ostalo ne uspe
+                }
     }
 }
 
@@ -265,14 +267,33 @@ struct ActivityData: Codable {
     let waterIntakes: [WaterIntakeEntry]?
     let exercises: [ExerciseEntry]?
     let todayWaterIntake: Double?
-    let waterIntakeGoal: Double?
-    
+    let waterIntakeGoal: Int // non-optional
     
     enum CodingKeys: String, CodingKey {
-        case weights, exercises
-        case waterIntakes = "waterIntakes"
-        case todayWaterIntake = "todayWaterIntake"
-        case waterIntakeGoal = "waterIntakeGoal"
+        case weights, exercises, waterIntakes
+        case todayWaterIntake
+        case waterIntakeGoal
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        weights = try? container.decode([WeightEntry].self, forKey: .weights)
+        waterIntakes = try? container.decode([WaterIntakeEntry].self, forKey: .waterIntakes)
+        exercises = try? container.decode([ExerciseEntry].self, forKey: .exercises)
+        todayWaterIntake = try? container.decode(Double.self, forKey: .todayWaterIntake)
+        
+        if let intValue = try? container.decode(Int.self, forKey: .waterIntakeGoal) {
+            waterIntakeGoal = intValue
+            print("Decoded waterIntakeGoal as Int: \(intValue)")
+        } else if let stringValue = try? container.decode(String.self, forKey: .waterIntakeGoal),
+                  let intFromString = Int(stringValue) {
+            waterIntakeGoal = intFromString
+            print("Decoded waterIntakeGoal from String: \(intFromString)")
+        } else {
+            print("Using default waterIntakeGoal")
+            waterIntakeGoal = 1749 // default vrednost
+        }
     }
 }
 struct WeightEntry: Codable {

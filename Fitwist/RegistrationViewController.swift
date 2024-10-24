@@ -1,12 +1,10 @@
 import UIKit
 import Foundation
 
-
 class RegistrationViewController: UIViewController {
     
     private var registrationData = RegistrationData()
 
-    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -29,22 +27,44 @@ class RegistrationViewController: UIViewController {
         return label
     }()
     
+    private let logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit // Adjust the content mode
+        imageView.image = UIImage(named: "logo") // Replace with your logo image name
+        return imageView
+    }()
+    
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "SmartFitBites customizes meal plans tailored to your tastes, budget, and daily routine. Achieve your dietary and nutritional objectives with our app. Start crafting your personalized meal plan in just moments.\n\nAre you ready to try it out?"
-        label.font = UIFont.systemFont(ofSize: 14)
+
+        let fontSize: CGFloat = 16 // Povećana veličina fonta
+        label.font = UIFont.systemFont(ofSize: fontSize)
+
+        let text = "Fitwist customizes meal plans tailored to your tastes, budget, and daily routine. Achieve your dietary and nutritional objectives with our app. Start crafting your personalized meal plan in just moments.\n\nAre you ready to try it out?"
+
+        let attributedString = NSMutableAttributedString(string: text)
+
+        let boldRange1 = (text as NSString).range(of: "Fitwist")
+        let boldRange2 = (text as NSString).range(of: "Are you ready to try it out?")
+
+        attributedString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: fontSize), range: boldRange1)
+        attributedString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: fontSize), range: boldRange2)
+
+        label.attributedText = attributedString
         label.textAlignment = .center
         label.textColor = .darkGray
         label.numberOfLines = 0
         return label
     }()
-    
+
     private let nameTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Enter your name"
         textField.borderStyle = .roundedRect
+        textField.backgroundColor = UIColor(hex: "#f1ede2") // svetla boja pozadine
         return textField
     }()
     
@@ -54,6 +74,7 @@ class RegistrationViewController: UIViewController {
         textField.placeholder = "Enter your email"
         textField.borderStyle = .roundedRect
         textField.keyboardType = .emailAddress
+        textField.backgroundColor = UIColor(hex: "#f1ede2") // svetla boja pozadine
         return textField
     }()
     
@@ -63,6 +84,7 @@ class RegistrationViewController: UIViewController {
         textField.placeholder = "Enter your password"
         textField.borderStyle = .roundedRect
         textField.isSecureTextEntry = true
+        textField.backgroundColor = UIColor(hex: "#f1ede2") // svetla boja pozadine
         return textField
     }()
     
@@ -72,6 +94,7 @@ class RegistrationViewController: UIViewController {
         textField.placeholder = "Confirm your password"
         textField.borderStyle = .roundedRect
         textField.isSecureTextEntry = true
+        textField.backgroundColor = UIColor(hex: "#f1ede2") // svetla boja pozadine
         return textField
     }()
     
@@ -88,7 +111,8 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 249/255.0, green: 246/255.0, blue: 237/255.0, alpha: 1.0)
+
         setupUI()
         setupConstraints()
         
@@ -106,6 +130,7 @@ class RegistrationViewController: UIViewController {
         scrollView.addSubview(contentView)
         
         contentView.addSubview(titleLabel)
+        contentView.addSubview(logoImageView) // Add the logo here
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(nameTextField)
         contentView.addSubview(emailTextField)
@@ -133,11 +158,18 @@ class RegistrationViewController: UIViewController {
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+            // Dodavanje logoa
+            logoImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10), // Razmak od titleLabel
+            logoImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            logoImageView.heightAnchor.constraint(equalToConstant: 100), // Visina logoa, prilagodite prema potrebi
+            logoImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8), // Širina logoa, prilagodite prema potrebi
+
+            // Smanjen razmak između logoa i descriptionLabel
+            descriptionLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10), // Smanjeno
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            nameTextField.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
+            nameTextField.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20), // Ostatak ostaje isti
             nameTextField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             nameTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             nameTextField.heightAnchor.constraint(equalToConstant: 44),

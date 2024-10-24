@@ -1,7 +1,6 @@
 import UIKit
 
 class UserDashboardViewController: UITabBarController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabs()
@@ -10,62 +9,68 @@ class UserDashboardViewController: UITabBarController {
     
     private func setupTabs() {
         let homeVC = HomeViewController()
-        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
-        
         let dietPlanVC = UIViewController()
-        dietPlanVC.tabBarItem = UITabBarItem(title: "Diet Plan", image: UIImage(systemName: "leaf"), tag: 1)
-
-        // Progress tab with Activities
         let activitiesVC = ActivitiesViewController()
-        activitiesVC.title = "Progress"
-        activitiesVC.tabBarItem = UITabBarItem(title: "Progress",
-                                              image: UIImage(systemName: "chart.bar"),
-                                              tag: 2)
-
         let profileVC = UIViewController()
+        
+        // Podesite navigation bar samo za view controllere koji ga trebaju
+        [dietPlanVC, activitiesVC, profileVC].forEach { viewController in
+            viewController.navigationItem.largeTitleDisplayMode = .never
+        }
+        
+        let homeNav = UINavigationController(rootViewController: homeVC)
+        let dietPlanNav = UINavigationController(rootViewController: dietPlanVC)
+        let activitiesNav = UINavigationController(rootViewController: activitiesVC)
+        let profileNav = UINavigationController(rootViewController: profileVC)
+        
+        // Sakrij navigation bar za home screen
+        homeNav.setNavigationBarHidden(true, animated: false)
+        
+        // Podesite navigation bar appearance samo za ostale navigation controllere
+        [dietPlanNav, activitiesNav, profileNav].forEach { nav in
+            nav.navigationBar.prefersLargeTitles = false
+            nav.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            nav.navigationBar.shadowImage = UIImage()
+            nav.navigationBar.isTranslucent = true
+            nav.navigationBar.backgroundColor = UIColor(red: 249/255.0, green: 246/255.0, blue: 237/255.0, alpha: 1.0)
+            nav.navigationBar.frame.size.height = 14
+        }
+        
+        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
+        dietPlanVC.tabBarItem = UITabBarItem(title: "Diet Plan", image: UIImage(systemName: "leaf"), tag: 1)
+        activitiesVC.tabBarItem = UITabBarItem(title: "Progress", image: UIImage(systemName: "chart.bar"), tag: 2)
         profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 3)
         
-        // Wrap each VC in a navigation controller
-        viewControllers = [
-            UINavigationController(rootViewController: homeVC),
-            UINavigationController(rootViewController: dietPlanVC),
-            UINavigationController(rootViewController: activitiesVC),
-            UINavigationController(rootViewController: profileVC)
-        ]
+        viewControllers = [homeNav, dietPlanNav, activitiesNav, profileNav]
     }
     
     private func setupAppearance() {
-        tabBar.tintColor = UIColor(named: "AccentColor") ?? .systemGreen
-        tabBar.unselectedItemTintColor = .gray
-        
+        // Tab bar appearance
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
+        tabBar.standardAppearance = appearance
         if #available(iOS 15.0, *) {
-            let appearance = UITabBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = .white
-            tabBar.standardAppearance = appearance
             tabBar.scrollEdgeAppearance = tabBar.standardAppearance
         }
         
-        // Setup navigation bar appearance
-        if let navigationBars = viewControllers?.compactMap({ ($0 as? UINavigationController)?.navigationBar }) {
-            navigationBars.forEach { navBar in
-                navBar.prefersLargeTitles = true
-                
-                if #available(iOS 15.0, *) {
-                    let appearance = UINavigationBarAppearance()
-                    appearance.configureWithOpaqueBackground()
-                    appearance.backgroundColor = .white
-                    appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-                    appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-                    
-                    navBar.standardAppearance = appearance
-                    navBar.scrollEdgeAppearance = appearance
-                }
-            }
+        tabBar.tintColor = UIColor(named: "AccentColor") ?? .systemGreen
+        tabBar.unselectedItemTintColor = .gray
+        
+        // Navigation bar global appearance
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = UIColor(red: 249/255.0, green: 246/255.0, blue: 237/255.0, alpha: 1.0)
+        navBarAppearance.shadowImage = nil
+        navBarAppearance.shadowColor = nil
+        
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().compactAppearance = navBarAppearance
+        if #available(iOS 15.0, *) {
+            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         }
     }
 }
-import UIKit
 
 class HomeViewController: UIViewController {
     
@@ -186,8 +191,8 @@ class HomeViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.97, alpha: 1.0)
-        
+        view.backgroundColor = UIColor(red: 249/255.0, green: 246/255.0, blue: 237/255.0, alpha: 1.0)
+
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
@@ -212,6 +217,7 @@ class HomeViewController: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -432,14 +438,15 @@ class HomeViewController: UIViewController {
       
     private func createMealView(mealType: String, recipe: RecipeData) -> UIView {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 241/255.0, green: 237/255.0, blue: 226/255.0, alpha: 1.0)
         view.layer.cornerRadius = 10
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.1
         view.layer.shadowOffset = CGSize(width: 0, height: 2)
         view.layer.shadowRadius = 4
-        view.layer.borderColor = UIColor.systemGreen.cgColor
-        view.layer.borderWidth = 1
+//        view.layer.borderColor = UIColor.systemGreen.cgColor
+        view.layer.borderColor = UIColor(red: 50/255.0, green: 49/255.0, blue: 45/255.0, alpha: 1.0).cgColor
+        view.layer.borderWidth = 0.5
         
         let mealTypeLabel = UILabel()
         mealTypeLabel.text = mealType.uppercased()

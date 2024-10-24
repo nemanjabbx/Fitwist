@@ -5,6 +5,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+          
+          // Globalne postavke za navigation bar
+          let navBarAppearance = UINavigationBarAppearance()
+          navBarAppearance.configureWithOpaqueBackground()
+          navBarAppearance.backgroundColor = UIColor(red: 249/255.0, green: 246/255.0, blue: 237/255.0, alpha: 1.0)
+          navBarAppearance.shadowImage = nil
+          navBarAppearance.shadowColor = nil
+          navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+          
+          UINavigationBar.appearance().standardAppearance = navBarAppearance
+          UINavigationBar.appearance().compactAppearance = navBarAppearance
+          UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+          UINavigationBar.appearance().prefersLargeTitles = false
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         
