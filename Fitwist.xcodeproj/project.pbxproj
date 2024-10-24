@@ -24,38 +24,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7FC359052CBEA21400E8E831 /* SmartFitBites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartFitBites.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FC3591B2CBEA21700E8E831 /* SmartFitBitesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartFitBitesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FC359252CBEA21800E8E831 /* SmartFitBitesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartFitBitesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FC359052CBEA21400E8E831 /* Fitwise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitwise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FC3591B2CBEA21700E8E831 /* FitwiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitwiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FC359252CBEA21800E8E831 /* FitwiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitwiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		7FC3592D2CBEA21800E8E831 /* Exceptions for "SmartFitBites" folder in "SmartFitBites" target */ = {
+		7F8ED2722CC796E10025FF8B /* Exceptions for "Fitwise" folder in "Fitwise" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 7FC359042CBEA21400E8E831 /* SmartFitBites */;
+			target = 7FC359042CBEA21400E8E831 /* Fitwise */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		7FC359072CBEA21400E8E831 /* SmartFitBites */ = {
+		7F8ED21A2CC796CB0025FF8B /* New Folder */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "New Folder";
+			sourceTree = "<group>";
+		};
+		7F8ED25E2CC796E00025FF8B /* Fitwise */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				7FC3592D2CBEA21800E8E831 /* Exceptions for "SmartFitBites" folder in "SmartFitBites" target */,
+				7F8ED2722CC796E10025FF8B /* Exceptions for "Fitwise" folder in "Fitwise" target */,
 			);
-			path = SmartFitBites;
+			path = Fitwise;
 			sourceTree = "<group>";
 		};
-		7FC3591E2CBEA21700E8E831 /* SmartFitBitesTests */ = {
+		7FC3591E2CBEA21700E8E831 /* FitwiseTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SmartFitBitesTests;
+			path = FitwiseTests;
 			sourceTree = "<group>";
 		};
-		7FC359282CBEA21800E8E831 /* SmartFitBitesUITests */ = {
+		7FC359282CBEA21800E8E831 /* FitwiseUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SmartFitBitesUITests;
+			path = FitwiseUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -88,9 +93,10 @@
 		7FC358FC2CBEA21400E8E831 = {
 			isa = PBXGroup;
 			children = (
-				7FC359072CBEA21400E8E831 /* SmartFitBites */,
-				7FC3591E2CBEA21700E8E831 /* SmartFitBitesTests */,
-				7FC359282CBEA21800E8E831 /* SmartFitBitesUITests */,
+				7F8ED25E2CC796E00025FF8B /* Fitwise */,
+				7F8ED21A2CC796CB0025FF8B /* New Folder */,
+				7FC3591E2CBEA21700E8E831 /* FitwiseTests */,
+				7FC359282CBEA21800E8E831 /* FitwiseUITests */,
 				7FC359062CBEA21400E8E831 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,9 +104,9 @@
 		7FC359062CBEA21400E8E831 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7FC359052CBEA21400E8E831 /* SmartFitBites.app */,
-				7FC3591B2CBEA21700E8E831 /* SmartFitBitesTests.xctest */,
-				7FC359252CBEA21800E8E831 /* SmartFitBitesUITests.xctest */,
+				7FC359052CBEA21400E8E831 /* Fitwise.app */,
+				7FC3591B2CBEA21700E8E831 /* FitwiseTests.xctest */,
+				7FC359252CBEA21800E8E831 /* FitwiseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7FC359042CBEA21400E8E831 /* SmartFitBites */ = {
+		7FC359042CBEA21400E8E831 /* Fitwise */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FC3592E2CBEA21800E8E831 /* Build configuration list for PBXNativeTarget "SmartFitBites" */;
+			buildConfigurationList = 7FC3592E2CBEA21800E8E831 /* Build configuration list for PBXNativeTarget "Fitwise" */;
 			buildPhases = (
 				7FC359012CBEA21400E8E831 /* Sources */,
 				7FC359022CBEA21400E8E831 /* Frameworks */,
@@ -121,18 +127,19 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				7FC359072CBEA21400E8E831 /* SmartFitBites */,
+				7F8ED21A2CC796CB0025FF8B /* New Folder */,
+				7F8ED25E2CC796E00025FF8B /* Fitwise */,
 			);
-			name = SmartFitBites;
+			name = Fitwise;
 			packageProductDependencies = (
 			);
 			productName = SmartFitBites;
-			productReference = 7FC359052CBEA21400E8E831 /* SmartFitBites.app */;
+			productReference = 7FC359052CBEA21400E8E831 /* Fitwise.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7FC3591A2CBEA21700E8E831 /* SmartFitBitesTests */ = {
+		7FC3591A2CBEA21700E8E831 /* FitwiseTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FC359332CBEA21800E8E831 /* Build configuration list for PBXNativeTarget "SmartFitBitesTests" */;
+			buildConfigurationList = 7FC359332CBEA21800E8E831 /* Build configuration list for PBXNativeTarget "FitwiseTests" */;
 			buildPhases = (
 				7FC359172CBEA21700E8E831 /* Sources */,
 				7FC359182CBEA21700E8E831 /* Frameworks */,
@@ -144,18 +151,18 @@
 				7FC3591D2CBEA21700E8E831 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				7FC3591E2CBEA21700E8E831 /* SmartFitBitesTests */,
+				7FC3591E2CBEA21700E8E831 /* FitwiseTests */,
 			);
-			name = SmartFitBitesTests;
+			name = FitwiseTests;
 			packageProductDependencies = (
 			);
 			productName = SmartFitBitesTests;
-			productReference = 7FC3591B2CBEA21700E8E831 /* SmartFitBitesTests.xctest */;
+			productReference = 7FC3591B2CBEA21700E8E831 /* FitwiseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7FC359242CBEA21800E8E831 /* SmartFitBitesUITests */ = {
+		7FC359242CBEA21800E8E831 /* FitwiseUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FC359362CBEA21800E8E831 /* Build configuration list for PBXNativeTarget "SmartFitBitesUITests" */;
+			buildConfigurationList = 7FC359362CBEA21800E8E831 /* Build configuration list for PBXNativeTarget "FitwiseUITests" */;
 			buildPhases = (
 				7FC359212CBEA21800E8E831 /* Sources */,
 				7FC359222CBEA21800E8E831 /* Frameworks */,
@@ -167,13 +174,13 @@
 				7FC359272CBEA21800E8E831 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				7FC359282CBEA21800E8E831 /* SmartFitBitesUITests */,
+				7FC359282CBEA21800E8E831 /* FitwiseUITests */,
 			);
-			name = SmartFitBitesUITests;
+			name = FitwiseUITests;
 			packageProductDependencies = (
 			);
 			productName = SmartFitBitesUITests;
-			productReference = 7FC359252CBEA21800E8E831 /* SmartFitBitesUITests.xctest */;
+			productReference = 7FC359252CBEA21800E8E831 /* FitwiseUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +206,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7FC359002CBEA21400E8E831 /* Build configuration list for PBXProject "SmartFitBites" */;
+			buildConfigurationList = 7FC359002CBEA21400E8E831 /* Build configuration list for PBXProject "Fitwise" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -208,14 +215,17 @@
 			);
 			mainGroup = 7FC358FC2CBEA21400E8E831;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7F74D0E72CC2CC9D00D7E251 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7FC359062CBEA21400E8E831 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7FC359042CBEA21400E8E831 /* SmartFitBites */,
-				7FC3591A2CBEA21700E8E831 /* SmartFitBitesTests */,
-				7FC359242CBEA21800E8E831 /* SmartFitBitesUITests */,
+				7FC359042CBEA21400E8E831 /* Fitwise */,
+				7FC3591A2CBEA21700E8E831 /* FitwiseTests */,
+				7FC359242CBEA21800E8E831 /* FitwiseUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -271,12 +281,12 @@
 /* Begin PBXTargetDependency section */
 		7FC3591D2CBEA21700E8E831 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7FC359042CBEA21400E8E831 /* SmartFitBites */;
+			target = 7FC359042CBEA21400E8E831 /* Fitwise */;
 			targetProxy = 7FC3591C2CBEA21700E8E831 /* PBXContainerItemProxy */;
 		};
 		7FC359272CBEA21800E8E831 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7FC359042CBEA21400E8E831 /* SmartFitBites */;
+			target = 7FC359042CBEA21400E8E831 /* Fitwise */;
 			targetProxy = 7FC359262CBEA21800E8E831 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -289,19 +299,22 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XKX5QU7J5U;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SmartFitBites/Info.plist;
+				INFOPLIST_FILE = Fitwise/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Fitwise;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sfb.SmartFitBites;
+				PRODUCT_BUNDLE_IDENTIFIER = sfb.Fitwise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -316,19 +329,22 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XKX5QU7J5U;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SmartFitBites/Info.plist;
+				INFOPLIST_FILE = Fitwise/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Fitwise;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sfb.SmartFitBites;
+				PRODUCT_BUNDLE_IDENTIFIER = sfb.Fitwise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -469,7 +485,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartFitBites.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SmartFitBites";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fitwise.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fitwise";
 			};
 			name = Debug;
 		};
@@ -487,7 +503,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartFitBites.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SmartFitBites";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fitwise.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fitwise";
 			};
 			name = Release;
 		};
@@ -526,7 +542,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7FC359002CBEA21400E8E831 /* Build configuration list for PBXProject "SmartFitBites" */ = {
+		7FC359002CBEA21400E8E831 /* Build configuration list for PBXProject "Fitwise" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FC359312CBEA21800E8E831 /* Debug */,
@@ -535,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FC3592E2CBEA21800E8E831 /* Build configuration list for PBXNativeTarget "SmartFitBites" */ = {
+		7FC3592E2CBEA21800E8E831 /* Build configuration list for PBXNativeTarget "Fitwise" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FC3592F2CBEA21800E8E831 /* Debug */,
@@ -544,7 +560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FC359332CBEA21800E8E831 /* Build configuration list for PBXNativeTarget "SmartFitBitesTests" */ = {
+		7FC359332CBEA21800E8E831 /* Build configuration list for PBXNativeTarget "FitwiseTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FC359342CBEA21800E8E831 /* Debug */,
@@ -553,7 +569,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FC359362CBEA21800E8E831 /* Build configuration list for PBXNativeTarget "SmartFitBitesUITests" */ = {
+		7FC359362CBEA21800E8E831 /* Build configuration list for PBXNativeTarget "FitwiseUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FC359372CBEA21800E8E831 /* Debug */,
@@ -563,6 +579,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7F74D0E72CC2CC9D00D7E251 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 7FC358FD2CBEA21400E8E831 /* Project object */;
 }
