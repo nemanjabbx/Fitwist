@@ -230,6 +230,8 @@ class WaterIntakeView: UIView {
         ])
     }
     
+//    Ova ne radi
+    
     private func setupQuickAddButtons() {
         waterAmounts.forEach { (amount, iconName) in
             let button = createQuickAddButton(amount: amount, iconName: iconName)
