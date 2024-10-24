@@ -230,7 +230,7 @@ class WaterIntakeView: UIView {
         ])
     }
     
-//    Ova ne radi
+//    Ova ne radi, treba izvrsiti izmene
     
     private func setupQuickAddButtons() {
         waterAmounts.forEach { (amount, iconName) in
