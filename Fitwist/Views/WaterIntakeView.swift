@@ -230,13 +230,13 @@ class WaterIntakeView: UIView {
         ])
     }
     
-//    private func setupQuickAddButtons() {
-//        waterAmounts.forEach { (amount, iconName) in
-//            let button = createQuickAddButton(amount: amount, iconName: iconName)
-//            quickAddButtonsStack.addArrangedSubview(button)
-//        }
-//    }
-//    
+    private func setupQuickAddButtons() {
+        waterAmounts.forEach { (amount, iconName) in
+            let button = createQuickAddButton(amount: amount, iconName: iconName)
+            quickAddButtonsStack.addArrangedSubview(button)
+        }
+    }
+    
     
     private func createQuickAddButton(amount: Int, iconName: String) -> UIButton {
         let button = UIButton(type: .system)
